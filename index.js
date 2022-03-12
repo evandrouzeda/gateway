@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const helmet = require('helmet');
 
-const carteiraServiceProxy = httpProxy('http://localhost:3003');
+//TODO: aqui tem que botar uma variavel de ambiente
+const carteiraServiceProxy = httpProxy('http://localhost:5001');
 //const pessoasServiceProxy = httpProxy('http://localhost:3003');
 
 // Proxy request
