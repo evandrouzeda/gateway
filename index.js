@@ -8,7 +8,7 @@ const helmet = require('helmet');
 
 //TODO: aqui tem que botar uma variavel de ambiente
 const carteiraServiceProxy = httpProxy('http://localhost:5001');
-//const pessoasServiceProxy = httpProxy('http://localhost:3003');
+const ativoServiceProxy = httpProxy('http://localhost:5002');
 
 // Proxy request
 // rota para carteira e todos os métodos
@@ -19,13 +19,13 @@ app.all('/carteira', (req, res, next) => {
 app.all('/carteira/:id', (req, res, next) => {
     carteiraServiceProxy(req, res, next);
 })
-// rota para pessoas e todos os métodos
+// rota para ativo e todos os métodos
 app.all('/ativo', (req, res, next) => {
-    pessoasServiceProxy(req, res, next);
+    ativoServiceProxy(req, res, next);
 })
-// rota para pessoas e todos os métodos com um parâmetro ID
+// rota para ativo e todos os métodos com um parâmetro ID
 app.all('/ativo/:id', (req, res, next) => {
-    pessoasServiceProxy(req, res, next);
+    ativoServiceProxy(req, res, next);
 })
 
 app.use(logger('dev'));
