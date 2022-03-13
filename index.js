@@ -9,7 +9,7 @@ const helmet = require('helmet');
 const jwt = require('jsonwebtoken');
 const Mongodb = require('./config/mongodb');
 
-//TODO: aqui tem que botar uma variavel de ambiente
+
 function addSession(req) {
     const [path, params] = req.url.split("?")
     return `${path}?${params ? params + "&" : ""}${new URLSearchParams(req.session).toString()}`
