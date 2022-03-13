@@ -1,5 +1,4 @@
 const { MongoClient, Db } = require("mongodb")
-require('dotenv').config()
 
 module.exports = class Mongodb {
     db = null
